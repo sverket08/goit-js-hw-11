@@ -1,3 +1,7 @@
+
+import { fetchImages } from 'pixabay-api';
+
+
 export function fetchImages(query, page) {
 const API_KEY = '45342411-abd0b05e060740fccafff2238';
 const URL = `https://pixabay.com/api/?key=${API_KEY}&q=${encodeURIComponent(query)}&page=${page}&per_page=12`;

@@ -1,20 +1,15 @@
-import { fetchImages } from './pixabay-api.js';
-import { renderGallery } from './render-functions.js';
+import { fetchImages } from './js/pixabay-api.js';
+import { renderGallery } from './js/render-functions.js';
 
-// Описаний у документації
 import SimpleLightbox from "simplelightbox";
-// Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-
-// Описаний у документації
 import iziToast from "izitoast";
-// Додатковий імпорт стилів
 import "izitoast/dist/css/iziToast.min.css";
 
 
 const form = document.getElementById('search-form');
-const gallery = document.getElementById('.gallery');
+const gallery = document.getElementById('gallery');
 const loader = document.getElementById('loader');
 
 let currentPage = 1;
@@ -32,7 +27,7 @@ form.addEventListener('submit', (event) => {
         return;
     }
 
-    document.querySelector('.gallery').innerHTML = '';
+    gallery.innerHTML = '';
     currentPage = 1;
     loader.style.display = 'block';
 
@@ -45,7 +40,7 @@ form.addEventListener('submit', (event) => {
                 });
             } else {
                 renderGallery(data.hits);
-                new SimpleLightbox('.gallery a', {});
+                new SimpleLightbox('gallery a', {});
             }
         })
         .catch(error => {

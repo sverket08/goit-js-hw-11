@@ -1,5 +1,5 @@
 export function renderGallery(images) {
-  const gallery = document.getElementById('.gallery');
+  const gallery = document.getElementById('gallery');
   gallery.innerHTML = images.map(image => {
       return `
           <div class="gallery-item">
@@ -16,4 +16,3 @@ export function renderGallery(images) {
       `;
   }).join('');
 }
-console.log(images);
